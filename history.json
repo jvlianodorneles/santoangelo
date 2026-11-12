@@ -1,0 +1,156 @@
+{
+ "stops": [
+  {
+   "n": 1,
+   "year": "1706",
+   "title": "Fundação da Redução de Santo Ângelo Custódio",
+   "text": "Em 1706, o padre jesuíta belga Diogo Haze funda a redução de Santo Ângelo Custódio, a última e mais oriental das Sete Reduções Jesuíticas dos Guaranis. O povoado floresceu com milhares de indígenas, desenvolvendo agricultura, música sacra, escultura e fundição.",
+   "x": 768525.0,
+   "y": 6865900.0,
+   "h": 0,
+   "zoom": 0.8,
+   "source": {
+    "label": "IPHAN - Instituto do Patrimônio Histórico e Artístico Nacional",
+    "url": "http://portal.iphan.gov.br"
+   },
+   "more": null,
+   "photos": [
+    {
+     "src": "history/01_0.jpg",
+     "credit": "Praça Pinheiro Machado, antigo centro cívico e religioso da redução jesuítica (CC BY-SA 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Pra%C3%A7a_Pinheiro_Machado%2C_Santo_%C3%82ngelo.jpg"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "year": "1756",
+   "title": "A Guerra Guaranítica e Sepé Tiaraju",
+   "text": "Com o Tratado de Madri de 1750, Portugal e Espanha ordenaram a expulsão dos guaranis das Missões Orientais. O alferes-mor Sepé Tiaraju liderou a heroica resistência indígena contra os exércitos imperiais, imortalizando nas coxilhas a frase célebre: 'Esta terra tem dono!'.",
+   "x": 768550.0,
+   "y": 6865880.0,
+   "h": 0,
+   "zoom": 1.2,
+   "source": {
+    "label": "Memória das Missões",
+    "url": "https://pt.wikipedia.org/wiki/Sep%C3%A9_Tiaraju"
+   },
+   "more": null,
+   "photos": [
+    {
+     "src": "history/02_0.jpg",
+     "credit": "Estátua em homenagem ao herói guarani Sepé Tiaraju (CC BY-SA 3.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Est%C3%A1tua_Sep%C3%A9_Tiaraju.jpg"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "year": "1855",
+   "title": "A Nova Povoação e a Chegada dos Imigrantes",
+   "text": "Após a destruição das missões, Santo Ângelo renasce em meados do século XIX como colônia militar e polo de colonização. Imigrantes alemães, italianos, poloneses e russos estabelecem-se ao redor do antigo centro histórico, integrando-se aos descendentes indígenas e tropeiros.",
+   "x": 768492.5,
+   "y": 6865951.3,
+   "h": 0,
+   "zoom": 1.0,
+   "source": {
+    "label": "História de Santo Ângelo",
+    "url": "https://santoangelo.rs.gov.br"
+   },
+   "more": null,
+   "photos": []
+  },
+  {
+   "n": 4,
+   "year": "1921",
+   "title": "A Estação Ferroviária e os Trilhos do Progresso",
+   "text": "A inauguração da Estação Ferroviária em 1921 conecta Santo Ângelo à malha da Viação Férrea do Rio Grande do Sul. O pátio ferroviário com suas locomotivas a vapor impulsionou o comércio de trigo, erva-mate, soja e manufaturas.",
+   "x": 769013.3,
+   "y": 6866525.2,
+   "h": 0,
+   "zoom": 1.0,
+   "source": {
+    "label": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org"
+   },
+   "more": null,
+   "photos": [
+    {
+     "src": "history/04_0.jpg",
+     "credit": "Prédio da Antiga Estação Ferroviária de 1921, atual Memorial Coluna Prestes (CC BY-SA 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Memorial_Coluna_Prestes_%28Santo_%C3%82ngelo%2C_Brasil%29_.jpg"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "year": "1924",
+   "title": "O Levante Militar e a Coluna Prestes",
+   "text": "Nas noites de outubro de 1924, o capitão Luís Carlos Prestes comanda no 1º Batalhão Ferroviário de Santo Ângelo a revolta tenentista. Os revolucionários gaúchos iniciaram aqui a lendária marcha de mais de 25.000 quilômetros pelo interior do país.",
+   "x": 769025.0,
+   "y": 6866540.0,
+   "h": 0,
+   "zoom": 1.1,
+   "source": {
+    "label": "Memorial Coluna Prestes",
+    "url": "https://santoangelo.rs.gov.br"
+   },
+   "more": null,
+   "photos": []
+  },
+  {
+   "n": 6,
+   "year": "1929",
+   "title": "A Construção da Catedral Angelopolitana",
+   "text": "Em 1929 tem início a construção da imponente Catedral de Santo Ângelo, erguida sobre os próprios alicerces da antiga igreja dos jesuítas. Sua arquitetura barroco-missioneira evoca a monumentalidade de São Miguel Arcanjo, talhada no arenito róseo da região.",
+   "x": 768528.0,
+   "y": 6865980.0,
+   "h": 0,
+   "zoom": 1.3,
+   "source": {
+    "label": "Diocese de Santo Ângelo",
+    "url": "https://diocesedesantoangelo.org"
+   },
+   "more": null,
+   "photos": [
+    {
+     "src": "history/06_0.jpg",
+     "credit": "Fachada monumental da Catedral Angelopolitana em arenito missioneiro (CC BY-SA 4.0)",
+     "url": "https://commons.wikimedia.org/wiki/File:Catedral_angelopolitana_santo_angelo.jpg"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "year": "1980s",
+   "title": "As Escavações Arqueológicas e o Museu a Céu Aberto",
+   "text": "Trabalhos arqueológicos no subsolo da Praça Pinheiro Machado desvelaram as galerias subterrâneas, paredes de pedra e pisos da redução do século XVIII. Protegidos por estruturas envidraçadas, os vestígios formam um museu a céu aberto.",
+   "x": 768535.0,
+   "y": 6865915.0,
+   "h": 0,
+   "zoom": 1.2,
+   "source": {
+    "label": "IPHAN - Instituto do Patrimônio Histórico e Artístico Nacional",
+    "url": "http://portal.iphan.gov.br"
+   },
+   "more": null,
+   "photos": []
+  },
+  {
+   "n": 8,
+   "year": "1991",
+   "title": "O Brique da Praça",
+   "text": "Na arborizada Praça Ricardo Leônidas Ribas, nasce em 1991 o tradicional Brique da Praça. Todos os domingos pela manhã, o local transforma-se em ponto de encontro do chimarrão, música missioneira nativista, culinária típica e artesanato regional.",
+   "x": 768400.0,
+   "y": 6865200.0,
+   "h": 0,
+   "zoom": 1.0,
+   "source": {
+    "label": "Brique da Praça",
+    "url": "https://santoangelo.rs.gov.br"
+   },
+   "more": null,
+   "photos": []
+  }
+ ]
+}
