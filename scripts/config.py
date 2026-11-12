@@ -1,4 +1,4 @@
-"""Shared settings: the area we render, in RD New (EPSG:28992) meters."""
+"""Shared settings: the area we render, in SIRGAS 2000 / UTM zone 21S (EPSG:31981) meters."""
 
 import json
 from pathlib import Path
@@ -7,8 +7,9 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 BUILD = ROOT / "data" / "build"
 
-# Helenaveen with the Soemeersingel north to the Willem III-hoeve: 3.5 x 5.5 km.
-XMIN, YMIN, XMAX, YMAX = 189850, 376350, 193350, 381850
+# Santo Ângelo, RS, Brazil - Centro Histórico around Catedral Angelopolitana: 2.0 x 2.0 km.
+# Catedral Angelopolitana sits at X=768531, Y=6865955 in UTM 21S (-28.3051, -54.2617).
+XMIN, YMIN, XMAX, YMAX = 767500, 6865000, 769500, 6867000
 CX, CY = (XMIN + XMAX) / 2, (YMIN + YMAX) / 2
 
 # Downloads and ground textures come in square chunks of this many meters.
@@ -28,3 +29,4 @@ def write_area():
     (BUILD / "area.json").write_text(
         json.dumps({"xmin": XMIN, "ymin": YMIN, "xmax": XMAX, "ymax": YMAX, "cx": CX, "cy": CY, "chunk": CHUNK, "nx": NX, "ny": NY})
     )
+

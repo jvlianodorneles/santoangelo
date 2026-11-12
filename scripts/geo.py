@@ -1,4 +1,4 @@
-"""RD New <-> WGS84 (the usual polynomial approximation, about a meter off) and map projections."""
+"""SIRGAS 2000 / UTM zone 21S (EPSG:31981) <-> WGS84 and isometric map projections."""
 
 import math
 
@@ -6,23 +6,83 @@ from config import CX, CY, XMAX, XMIN, YMAX, YMIN
 
 HX, HZ = (XMAX - XMIN) / 2, (YMAX - YMIN) / 2
 
+# UTM Zone 21S (GRS80 / WGS84 ellipsoid) constants
+_A = 6378137.0
+_F = 1 / 298.257222101
+_B = _A * (1 - _F)
+_E2 = (_A**2 - _B**2) / _A**2
+_E_PRIME2 = (_A**2 - _B**2) / _B**2
+_E1 = (1 - math.sqrt(1 - _E2)) / (1 + math.sqrt(1 - _E2))
+_K0 = 0.9996
+_LON0 = -57.0  # central meridian for zone 21
+_X0 = 500000.0
+_Y0 = 10000000.0  # southern hemisphere false northing
+
 
 def wgs_to_rd(lat, lon):
-    dp, dl = 0.36 * (lat - 52.15517440), 0.36 * (lon - 5.38720621)
-    x = (155000 + 190094.945 * dl - 11832.228 * dp * dl - 114.221 * dp**2 * dl - 32.391 * dl**3 - 0.705 * dp
-         - 2.340 * dp**3 * dl - 0.608 * dp * dl**3 - 0.008 * dl**2 + 0.148 * dp**2 * dl**3)
-    y = (463000 + 309056.544 * dp + 3638.893 * dl**2 + 73.077 * dp**2 - 157.984 * dp * dl**2 + 59.788 * dp**3
-         + 0.433 * dl - 6.439 * dp**2 * dl**2 - 0.032 * dp * dl + 0.092 * dl**4 - 0.054 * dp * dl**4)
+    """WGS84 lat, lon to UTM Zone 21S (x, y) meters."""
+    lat_r = math.radians(lat)
+    lon_r = math.radians(lon)
+    lon0_r = math.radians(_LON0)
+
+    N = _A / math.sqrt(1 - _E2 * math.sin(lat_r) ** 2)
+    T = math.tan(lat_r) ** 2
+    C = _E_PRIME2 * math.cos(lat_r) ** 2
+    A = (lon_r - lon0_r) * math.cos(lat_r)
+
+    M = _A * (
+        (1 - _E2 / 4 - 3 * _E2**2 / 64 - 5 * _E2**3 / 256) * lat_r
+        - (3 * _E2 / 8 + 3 * _E2**2 / 32 + 45 * _E2**3 / 1024) * math.sin(2 * lat_r)
+        + (15 * _E2**2 / 256 + 45 * _E2**3 / 1024) * math.sin(4 * lat_r)
+        - (35 * _E2**3 / 3072) * math.sin(6 * lat_r)
+    )
+
+    x = _X0 + _K0 * N * (A + (1 - T + C) * A**3 / 6 + (5 - 18 * T + T**2 + 72 * C - 58 * _E_PRIME2) * A**5 / 120)
+    y = _Y0 + _K0 * (
+        M
+        + N
+        * math.tan(lat_r)
+        * (
+            A**2 / 2
+            + (5 - T + 9 * C + 4 * C**2) * A**4 / 24
+            + (61 - 58 * T + T**2 + 600 * C - 330 * _E_PRIME2) * A**6 / 720
+        )
+    )
     return x, y
 
 
 def rd_to_wgs(x, y):
-    dx, dy = (x - 155000) * 1e-5, (y - 463000) * 1e-5
-    n = (3235.65389 * dy - 32.58297 * dx**2 - 0.2475 * dy**2 - 0.84978 * dx**2 * dy - 0.0655 * dy**3 - 0.01709 * dx**2 * dy**2
-         - 0.00738 * dx + 0.0053 * dx**4 - 0.00039 * dx**2 * dy**3 + 0.00033 * dx**4 * dy - 0.00012 * dx * dy)
-    e = (5260.52916 * dx + 105.94684 * dx * dy + 2.45656 * dx * dy**2 - 0.81885 * dx**3 + 0.05594 * dx * dy**3 - 0.05607 * dx**3 * dy
-         + 0.01199 * dy - 0.00256 * dx**3 * dy**2 + 0.00128 * dx * dy**4 + 0.00022 * dy**2 - 0.00022 * dx**2 + 0.00026 * dx**5)
-    return 52.15517440 + n / 3600, 5.38720621 + e / 3600
+    """UTM Zone 21S (x, y) meters to WGS84 lat, lon."""
+    x_m = x - _X0
+    y_m = y - _Y0
+    M = y_m / _K0
+    mu = M / (_A * (1 - _E2 / 4 - 3 * _E2**2 / 64 - 5 * _E2**3 / 256))
+    phi1_r = (
+        mu
+        + (3 * _E1 / 2 - 27 * _E1**3 / 32) * math.sin(2 * mu)
+        + (21 * _E1**2 / 16 - 55 * _E1**4 / 32) * math.sin(4 * mu)
+        + (151 * _E1**3 / 96) * math.sin(6 * mu)
+        + (1097 * _E1**4 / 512) * math.sin(8 * mu)
+    )
+
+    N1 = _A / math.sqrt(1 - _E2 * math.sin(phi1_r) ** 2)
+    T1 = math.tan(phi1_r) ** 2
+    C1 = _E_PRIME2 * math.cos(phi1_r) ** 2
+    R1 = _A * (1 - _E2) / (1 - _E2 * math.sin(phi1_r) ** 2) ** 1.5
+    D = x_m / (N1 * _K0)
+
+    lat_r = phi1_r - (N1 * math.tan(phi1_r) / R1) * (
+        D**2 / 2
+        - (5 + 3 * T1 + 10 * C1 - 4 * C1**2 - 9 * _E_PRIME2) * D**4 / 24
+        + (61 + 90 * T1 + 298 * C1 + 45 * T1**2 - 252 * _E_PRIME2 - 3 * C1**2) * D**6 / 720
+    )
+    lon_r = math.radians(_LON0) + (
+        D
+        - (1 + 2 * T1 + C1) * D**3 / 6
+        + (5 - 2 * C1 + 28 * T1 - 3 * C1**2 + 8 * _E_PRIME2 + 24 * T1**2) * D**5 / 120
+    ) / math.cos(phi1_r)
+    return math.degrees(lat_r), math.degrees(lon_r)
+
 
 
 def screen(x, z, h=0.0, look=45):

@@ -36,7 +36,8 @@ async function openScene(scale, kuwahara, pass, look) {
   const server = await serve();
   const browser = await chromium.launch({
     headless: true,
-    args: ['--use-angle=vulkan', '--ignore-gpu-blocklist', '--enable-gpu-rasterization'],
+    executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium',
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--use-angle=vulkan', '--ignore-gpu-blocklist', '--enable-gpu-rasterization'],
   });
   const page = await browser.newPage();
   page.on('console', (m) => m.type() === 'error' && console.error('page:', m.text()));

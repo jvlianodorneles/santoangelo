@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
-# Build the isometric map of Helenaveen from open data, end to end.
-#   ./build.sh            fetch, preprocess, render at 4 px/m, cut Deep Zoom tiles into site/
-#   SCALE=3 ./build.sh    render at another resolution (update SCALE/WIDTH/HEIGHT in viewer/index.html to match)
+# Build the isometric map of Santo Ângelo from open data, end to end.
+#   ./build.sh            fetch, preprocess, render at 2 px/m, cut Deep Zoom tiles into site/
+#   SCALE=3 ./build.sh    render at higher resolution
 set -euo pipefail
 builtin cd "$(dirname "$0")"
-SCALE="${SCALE:-4}"
+SCALE="${SCALE:-2}"
 
-(builtin cd scripts && python3 fetch.py)
-(builtin cd scripts && uv run --quiet landmarks.py)
-(builtin cd scripts && uv run --quiet build_buildings.py)
-(builtin cd scripts && uv run --quiet build_trees.py 2>&1 | grep -v GDAL_NODATA)
-(builtin cd scripts && uv run --quiet build_ground.py)
-(builtin cd scripts && python3 build_places.py)
-(builtin cd scripts && uv run --quiet --with numpy python build_hotspots.py)
-(builtin cd scripts && python3 build_routes.py)
-(builtin cd scripts && uv run --quiet build_traffic.py)
-(builtin cd scripts && python3 build_history.py)
+(builtin cd scripts && uv run --python 3.12 fetch.py)
+(builtin cd scripts && uv run --python 3.12 landmarks.py)
+(builtin cd scripts && uv run --python 3.12 build_buildings.py)
+(builtin cd scripts && uv run --python 3.12 build_trees.py 2>&1 | grep -v GDAL_NODATA)
+(builtin cd scripts && uv run --python 3.12 build_ground.py)
+(builtin cd scripts && uv run --python 3.12 build_places.py)
+(builtin cd scripts && uv run --python 3.12 --with numpy python build_hotspots.py)
+(builtin cd scripts && uv run --python 3.12 build_routes.py)
+(builtin cd scripts && uv run --python 3.12 build_traffic.py)
+(builtin cd scripts && uv run --python 3.12 build_history.py)
 
-[ -d node_modules ] || bun install
+[ -d node_modules ] || npm install
 # Every view in scripts/config.py, each with the mask of buildings and trees that the viewer draws again over the
 # cars and walkers behind them.
 VIEWS=$(builtin cd scripts && python3 -c "from config import VIEWS; print(*VIEWS)")
@@ -29,7 +29,7 @@ done
 layout="out/tiles-$SCALE/layout.json"
 read -r W H C < <(python3 -c "import json; d=json.load(open('$layout')); print(d['width'], d['height'], d['cols'])")
 join() {  # tile folder, output image, bands to keep
-  vips arrayjoin "$(/bin/ls "$1"/*.png | tr '\n' ' ')" out/joined.v --across "$C"
+  vips arrayjoin "$(/bin/ls -v "$1"/*.png | tr '\n' ' ')" out/joined.v --across "$C"
   vips extract_area out/joined.v out/cropped.v 0 0 "$W" "$H"
   vips extract_band out/cropped.v "$2[compression=1]" 0 --n "$3"
   rm -f out/joined.v out/cropped.v
@@ -40,4 +40,5 @@ for look in $VIEWS; do
   join "out/tiles-$SCALE-objects$suffix" "out/objects-$SCALE$suffix.png" 1
 done
 
-./site.sh
+SCALE="$SCALE" ./site.sh
+

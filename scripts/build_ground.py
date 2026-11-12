@@ -140,7 +140,10 @@ def load_polygons():
     ]
     polys = []
     for coll in colls:
-        for f in json.load(open(RAW / f"bgt_{coll}.geojson"))["features"]:
+        path = RAW / f"bgt_{coll}.geojson"
+        if not path.exists():
+            continue
+        for f in json.load(open(path))["features"]:
             g = f["geometry"]
             if g is None:
                 continue

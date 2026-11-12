@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.11"
-# dependencies = ["numpy", "scipy", "scikit-image", "tifffile", "imagecodecs", "pillow"]
+# dependencies = ["numpy", "scipy", "scikit-image", "tifffile", "pillow"]
 # ///
 """Find individual trees in the AHN canopy height model.
 

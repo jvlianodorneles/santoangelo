@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="nl">
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Isometrisch Helenaveen</title>
-<meta name="description" content="Het veendorp Helenaveen in miniatuur, nagebouwd uit openbare kaarten, hoogtemetingen en een luchtfoto.">
+<title>Santo Ângelo Isométrica</title>
+<meta name="description" content="A Capital das Missões em pixel art isométrica, reconstruída a partir de dados abertos.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://jankeesvw.github.io/isometric-helenaveen/">
-<meta property="og:title" content="Isometrisch Helenaveen">
-<meta property="og:description" content="Het veendorp Helenaveen in miniatuur, nagebouwd uit openbare kaarten, hoogtemetingen en een luchtfoto.">
-<meta property="og:image" content="https://jankeesvw.github.io/isometric-helenaveen/og.png">
+<meta property="og:url" content="https://jvlianodorneles.github.io/santoangelo/">
+<meta property="og:title" content="Santo Ângelo Isométrica">
+<meta property="og:description" content="A Capital das Missões em pixel art isométrica, reconstruída a partir de dados abertos.">
+<meta property="og:image" content="https://jvlianodorneles.github.io/santoangelo/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Helenaveen in isometrische pixel art op een avond, met de kerk, de Helenavaart en brandende straatlantaarns">
+<meta property="og:image:alt" content="Santo Ângelo em pixel art isométrica, com a Catedral Angelopolitana e o Centro Histórico">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://jankeesvw.github.io/isometric-helenaveen/og.png">
+<meta name="twitter:image" content="https://jvlianodorneles.github.io/santoangelo/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -353,30 +353,28 @@
 
 <section id="intro" class="panel">
   <div class="intro-head">
-    <h1>Helenaveen</h1>
+    <h1>Santo Ângelo</h1>
     <button type="button" id="intro-toggle" aria-expanded="true" aria-controls="intro-body" aria-label="Menu in- of uitklappen" data-en-label="Show or hide the menu"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   </div>
   <div id="intro-body">
-  <p data-en="The peat village on the Helenavaart canal in miniature, from the A67 motorway to the Willem III farm.">Het veendorp aan de Helenavaart in miniatuur, van de A67 tot de Willem III-hoeve.</p>
-  <p class="long" data-en="Every house, every greenhouse and every tree stands in its real place, rebuilt from public maps, height measurements and an aerial photo. Scroll or pinch to zoom, or look up an address below.">Elk huis, elke kas en elke boom staat op zijn echte plek, nagebouwd uit openbare kaarten, hoogtemetingen en een luchtfoto. Scroll of knijp om te zoomen, of zoek hieronder een adres.</p>
+  <p data-en="The Capital of the Missions in miniature, from the Historic Center and Angelopolitana Cathedral to the Coluna Prestes Memorial.">A Capital das Missões em miniatura, do Centro Histórico e Catedral Angelopolitana ao Memorial Coluna Prestes e a Praça do Brique.</p>
+  <p class="long" data-en="Every house, church and tree stands in its real place, rebuilt from public maps, elevation models and aerial photography. Scroll or pinch to zoom, or look up a place below.">Cada edifício, praça e árvore está em seu lugar real, reconstruído a partir de dados públicos, modelos de elevação e foto aérea. Role ou pince para aproximar, ou busque um endereço abaixo.</p>
   <form id="search" role="search">
-    <input id="goto" list="place-list" placeholder="Ga naar een adres of plek…" autocomplete="off" aria-label="Ga naar een adres of plek" data-en-placeholder="Go to an address or place…" data-en-label="Go to an address or place">
+    <input id="goto" list="place-list" placeholder="Buscar lugar ou endereço…" autocomplete="off" aria-label="Buscar lugar ou endereço" data-en-placeholder="Search a place or address…" data-en-label="Search a place or address">
     <datalist id="place-list"></datalist>
   </form>
   <div id="found" aria-live="polite"></div>
-  <div id="legend"><span><i></i><b data-en="Walking junctions">Wandelknooppunten</b></span><span><i class="long"></i><b data-en="LAW 13 trail Dwars door Brabant">LAW 13 Dwars door Brabant</b></span></div>
-  <div id="places" role="group" aria-label="Snel naar" data-en-label="Go to">
-    <button type="button" data-rd="191850,377850" data-en="Village">Dorp</button>
-    <button type="button" data-place="Sint-Willibrorduskerk" data-en="Church">Kerk</button>
-    <button type="button" data-rd="192280,377570" data-en="Greenhouses">Kassen</button>
-    <button type="button" data-rd="192750,378900">Peel</button>
-    <button type="button" data-place="Hoeve Willem III">Willem III</button>
-    <button type="button" data-rd="191950,376660">A67</button>
-    <button type="button" id="routes-toggle" aria-pressed="false" data-en="Walking routes">Wandelroutes</button>
+  <div id="places" role="group" aria-label="Ir para" data-en-label="Go to">
+    <button type="button" data-place="Catedral Angelopolitana" data-en="Cathedral">Catedral</button>
+    <button type="button" data-place="Praça Pinheiro Machado (Centro Histórico)" data-en="Historic Square">Centro Histórico</button>
+    <button type="button" data-place="Museu Histórico das Missões" data-en="Museum">Museu</button>
+    <button type="button" data-place="Memorial Coluna Prestes" data-en="Memorial">Memorial</button>
+    <button type="button" data-place="Teatro Municipal Antônio Sepp" data-en="Theater">Teatro</button>
+    <button type="button" data-place="Praça Ricardo Leônidas Ribas (Praça do Brique)" data-en="Brique Square">Praça do Brique</button>
   </div>
-  <div id="series" role="group" aria-label="Ontdek" data-en-label="Explore">
-    <span data-en="Explore">Ontdek</span>
-    <button type="button" id="tour-toggle" aria-pressed="false" data-en="Helenaveen back then">Helenaveen van toen</button>
+  <div id="series" role="group" aria-label="Explorar" data-en-label="Explore">
+    <span data-en="Explore">Explorar</span>
+    <button type="button" id="tour-toggle" aria-pressed="false" data-en="Historic Tour">Roteiro Histórico</button>
   </div>
   </div>
 </section>
@@ -391,9 +389,9 @@
 </div>
 
 <div id="readout" class="panel">
-  <div id="coords"><b>GPS</b> 51,3886° N · 5,9166° O</div>
+  <div id="coords"><b>GPS</b> 28,3051° S · 54,2617° O</div>
   <div id="scale">1 pixel = 25 cm</div>
-  <div class="credits" data-en-html="Data: &lt;a href=&quot;https://3dbag.nl&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;3D BAG&lt;/a&gt;, BGT, AHN and aerial photo via &lt;a href=&quot;https://www.pdok.nl&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PDOK&lt;/a&gt;, &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpenStreetMap&lt;/a&gt;">Data: <a href="https://3dbag.nl" target="_blank" rel="noopener">3D BAG</a>, BGT, AHN en luchtfoto via <a href="https://www.pdok.nl" target="_blank" rel="noopener">PDOK</a>, <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></div>
+  <div class="credits" data-en-html="Data: &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpenStreetMap&lt;/a&gt;, Esri World Imagery, AWS Terrain">Dados: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>, Esri World Imagery, AWS Terrain</div>
 </div>
 
 <div id="minimap-frame" class="panel" aria-hidden="true"><div id="minimap"></div></div>
@@ -442,7 +440,7 @@ Daarna:
 Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vraag me naar de verhalen en plekken die alleen de mensen die er wonen kennen.</pre>
   <nav>
     <button type="button" id="make-copy" data-en="Copy the prompt">Kopieer de opdracht</button>
-    <a href="https://github.com/jankeesvw/isometric-helenaveen" target="_blank" rel="noopener" data-en="Code on GitHub">Code op GitHub</a>
+    <a href="https://github.com/jvlianodorneles/santoangelo" target="_blank" rel="noopener" data-en="Code on GitHub">Código no GitHub</a>
     <button type="button" class="close" id="make-close" data-en="Close">Sluiten</button>
   </nav>
 </dialog>
@@ -550,29 +548,39 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
 
   const rdToLocal = (X, Y) => ({ x: X - M.area.cx, z: M.area.cy - Y });
 
-  // Rijksdriehoeksstelsel to WGS84, the usual polynomial approximation (about a meter off).
+  // UTM Zone 21S (SIRGAS 2000 / WGS84) <-> WGS84
   function rdToWgs(X, Y) {
-    const dX = (X - 155000) * 1e-5, dY = (Y - 463000) * 1e-5;
-    const N = 3235.65389 * dY - 32.58297 * dX ** 2 - 0.2475 * dY ** 2 - 0.84978 * dX ** 2 * dY - 0.0655 * dY ** 3
-      - 0.01709 * dX ** 2 * dY ** 2 - 0.00738 * dX + 0.0053 * dX ** 4 - 0.00039 * dX ** 2 * dY ** 3
-      + 0.00033 * dX ** 4 * dY - 0.00012 * dX * dY;
-    const E = 5260.52916 * dX + 105.94684 * dX * dY + 2.45656 * dX * dY ** 2 - 0.81885 * dX ** 3
-      + 0.05594 * dX * dY ** 3 - 0.05607 * dX ** 3 * dY + 0.01199 * dY - 0.00256 * dX ** 3 * dY ** 2
-      + 0.00128 * dX * dY ** 4 + 0.00022 * dY ** 2 - 0.00022 * dX ** 2 + 0.00026 * dX ** 5;
-    return [52.1551744 + N / 3600, 5.38720621 + E / 3600];
+    const a = 6378137.0, f = 1 / 298.257222101, b = a * (1 - f);
+    const e2 = (a*a - b*b) / (a*a), e_prime2 = (a*a - b*b) / (b*b);
+    const e1 = (1 - Math.sqrt(1 - e2)) / (1 + Math.sqrt(1 - e2));
+    const k0 = 0.9996, lon0 = -57.0 * Math.PI / 180, x0 = 500000.0, y0 = 10000000.0;
+    const xm = X - x0, ym = Y - y0;
+    const M = ym / k0;
+    const mu = M / (a * (1 - e2/4 - 3*e2*e2/64 - 5*e2*e2*e2/256));
+    const phi1 = mu + (3*e1/2 - 27*e1**3/32)*Math.sin(2*mu) + (21*e1*e1/16 - 55*e1**4/32)*Math.sin(4*mu) + (151*e1**3/96)*Math.sin(6*mu);
+    const N1 = a / Math.sqrt(1 - e2 * Math.sin(phi1)**2);
+    const T1 = Math.tan(phi1)**2, C1 = e_prime2 * Math.cos(phi1)**2;
+    const R1 = a * (1 - e2) / Math.pow(1 - e2 * Math.sin(phi1)**2, 1.5);
+    const D = xm / (N1 * k0);
+    const lat = phi1 - (N1 * Math.tan(phi1) / R1) * (D*D/2 - (5 + 3*T1 + 10*C1 - 4*C1*C1 - 9*e_prime2)*Math.pow(D, 4)/24);
+    const lon = lon0 + (D - (1 + 2*T1 + C1)*Math.pow(D, 3)/6) / Math.cos(phi1);
+    return [lat * 180 / Math.PI, lon * 180 / Math.PI];
   }
-  // And back, by stepping toward the GPS point a few times: a meter of RD is near enough a meter on the ground.
+
   function wgsToRd(lat, lon) {
-    let X = 155000, Y = 463000;
-    for (let i = 0; i < 6; i++) {
-      const [la, lo] = rdToWgs(X, Y);
-      X += (lon - lo) * 111320 * Math.cos((lat * Math.PI) / 180);
-      Y += (lat - la) * 111200;
-    }
+    const a = 6378137.0, f = 1 / 298.257222101, b = a * (1 - f);
+    const e2 = (a*a - b*b) / (a*a), e_prime2 = (a*a - b*b) / (b*b);
+    const k0 = 0.9996, lon0 = -57.0 * Math.PI / 180, x0 = 500000.0, y0 = 10000000.0;
+    const lat_r = lat * Math.PI / 180, lon_r = lon * Math.PI / 180;
+    const N = a / Math.sqrt(1 - e2 * Math.sin(lat_r)**2);
+    const T = Math.tan(lat_r)**2, C = e_prime2 * Math.cos(lat_r)**2, A = (lon_r - lon0) * Math.cos(lat_r);
+    const M = a * ((1 - e2/4 - 3*e2*e2/64 - 5*e2**3/256)*lat_r - (3*e2/8 + 3*e2*e2/32)*Math.sin(2*lat_r) + (15*e2*e2/256)*Math.sin(4*lat_r));
+    const X = x0 + k0 * N * (A + (1 - T + C)*Math.pow(A, 3)/6);
+    const Y = y0 + k0 * (M + N * Math.tan(lat_r) * (A*A/2 + (5 - T + 9*C + 4*C*C)*Math.pow(A, 4)/24));
     return [X, Y];
   }
 
-  const nl = (n, d) => n.toLocaleString(L('nl-NL', 'en-GB'), { minimumFractionDigits: d, maximumFractionDigits: d });
+  const nl = (n, d) => n.toLocaleString(L('pt-BR', 'en-US'), { minimumFractionDigits: d, maximumFractionDigits: d });
   const coords = document.getElementById('coords');
   const scaleEl = document.getElementById('scale');
 
@@ -582,7 +590,7 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
     if (Math.abs(g.x) > hx || Math.abs(g.z) > hz) return;
     const X = M.area.cx + g.x, Y = M.area.cy - g.z;
     const [lat, lon] = rdToWgs(X, Y);
-    coords.innerHTML = `<b>GPS</b> ${nl(lat, 4)}° N · ${nl(lon, 4)}° ${L('O', 'E')}`;
+    coords.innerHTML = `<b>GPS</b> ${nl(Math.abs(lat), 4)}° S · ${nl(Math.abs(lon), 4)}° O`;
   }
 
   function updateZoom() {
@@ -594,10 +602,9 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
     scaleEl.textContent = `1 pixel = ${nl(100 / M.scale, 0)} cm · zoom ${ratio}`;
   }
 
-  // The view the map opens on and the home button goes back to: the village school in the middle, at 1:1.3. The point
-  // is the middle of the school building, 3 m up, so it sits in the middle whichever way the map is turned.
+  // The view the map opens on and the home button goes back to: Catedral Angelopolitana in the middle
   function goHome(now) {
-    const vp = viewer.viewport, { x, z } = rdToLocal(191904, 377867);
+    const vp = viewer.viewport, { x, z } = rdToLocal(768528, 6865980);
     vp.zoomTo(vp.imageToViewportZoom(1 / 1.3), null, now);
     vp.panTo(vp.imageToViewportCoordinates(groundToImage(x, z, 3)), now);
   }
@@ -688,6 +695,7 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
     },
   });
 
+  var needleAt = null;
   fetch('map.json', { cache: 'no-store' }).then((r) => r.json()).then((map) => {
     M = map;
     // A link may ask for another direction (?view=135); the map opens with that view's tiles.
@@ -1057,11 +1065,13 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
   }
 
   const routesBtn = document.getElementById('routes-toggle');
-  routesBtn.addEventListener('click', () => {
-    const on = !document.body.classList.contains('show-routes');
-    document.body.classList.toggle('show-routes', on);
-    routesBtn.setAttribute('aria-pressed', String(on));
-  });
+  if (routesBtn) {
+    routesBtn.addEventListener('click', () => {
+      const on = !document.body.classList.contains('show-routes');
+      document.body.classList.toggle('show-routes', on);
+      routesBtn.setAttribute('aria-pressed', String(on));
+    });
+  }
 
   function inside(pt, poly) {
     let c = false;
@@ -1567,16 +1577,10 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
     }
   }
 
-  // The dippers: six people in a circle in the Helenavaart in front of In d'Ouwe Peel, in up to their shoulders, a few
-  // in a woolly hat, bobbing a little while the circle slowly turns.
+  // Swimmers / dippers: disabled for urban center
   let dippers = null;
   function makeDippers() {
-    const c = rdToLocal(192072.2, 377911.4);
-    const people = Array.from({ length: 6 }, (_, i) => ({
-      a: (i / 6) * Math.PI * 2, phase: Math.random() * 7, skin: tone(SKIN),
-      top: Math.random() < 0.5 ? tone(SKIN) : tone(JACKETS), hat: Math.random() < 0.6 ? tone(JACKETS) : tone(HEADS),
-    }));
-    return { mode: SWIM, alpha: 1, x: c.x, z: c.z, people };
+    return null;
   }
   function ripple(ctx, x, z, r, alpha) {
     const [cx, cy] = toPx(x, z, 0), w = r * M.scale;
@@ -1587,6 +1591,7 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
     ctx.stroke();
   }
   function drawDippers(ctx, d) {
+    if (!d) return;
     const R = 1.7, spin = clock * 0.04;
     ripple(ctx, d.x, d.z, R + 0.6 + 0.08 * Math.sin(clock * 0.9), 0.35);
     const parts = d.people.map((p) => {
@@ -1654,7 +1659,7 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
     }
     // The dippers sit low in open water: drawn under the buildings and trees layer, so whatever stands in front hides them.
     dippers ||= makeDippers();
-    if (k >= 0.35 && inView(dippers.x, dippers.z, 0)) (objectsLayer ? behind : front).push([depthOf(dippers.x, dippers.z), dippers, dippers.x, dippers.z, 0, 0]);
+    if (dippers && k >= 0.35 && inView(dippers.x, dippers.z, 0)) (objectsLayer ? behind : front).push([depthOf(dippers.x, dippers.z), dippers, dippers.x, dippers.z, 0, 0]);
     paint(ctx, b, k, front, inView);
   }
 
@@ -1701,7 +1706,7 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
   // A street lamp every 34 m on one side of each village street: every residential street, and the bigger roads
   // within 650 m of the church.
   function makeLamps() {
-    const village = rdToLocal(191900, 378000), done = new Set(), out = [];
+    const village = rdToLocal(768528, 6865980), done = new Set(), out = [];
     for (const l of lanes) {
       const anywhere = l.c === 'residential' || l.c === 'living_street';
       if (done.has(l.e) || !(anywhere || l.c === 'tertiary' || l.c === 'unclassified')) continue;
@@ -1817,12 +1822,11 @@ Werk stap voor stap, controleer de licenties van de data die je gebruikt, en vra
   // Turning the map a quarter: the next view in map.json comes in, centered on the same spot on the ground. The needle
   // on the button points north.
   const turnBtn = document.getElementById('turn');
-  let needleAt = null;
   function pointNorth() {
     const target = (Math.atan2(-VIEW.s, VIEW.c / 2) * 180) / Math.PI;
-    // Turn the short way round from where the needle is now, so it swings the way the map turned.
     needleAt = needleAt === null ? target : needleAt + ((((target - needleAt) % 360) + 540) % 360) - 180;
-    document.getElementById('needle').style.transform = `rotate(${needleAt.toFixed(1)}deg)`;
+    const needle = document.getElementById('needle');
+    if (needle) needle.style.transform = `rotate(${needleAt.toFixed(1)}deg)`;
   }
   pointNorth();
   // Where a spot on the ground lies in the image of view i.
